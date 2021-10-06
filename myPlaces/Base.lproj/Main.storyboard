@@ -11,18 +11,74 @@
         <scene sceneID="Vzh-Gy-Ywv">
             <objects>
                 <tableViewController id="Z6G-yn-Uhe" customClass="MainViewController" customModule="myPlaces" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Lna-p7-3t9">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Lna-p7-3t9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="46" id="vsf-Ae-bRy">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="46"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="vsf-Ae-bRy" customClass="CustomTableViewCell" customModule="myPlaces" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="85"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vsf-Ae-bRy" id="OST-2g-SzC">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="46"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PRO-LZ-pcg">
+                                            <rect key="frame" x="15" y="10" width="65" height="65"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="65" id="3rh-Rs-B0i"/>
+                                                <constraint firstAttribute="width" constant="65" id="4wk-LS-cB9"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8s-r7-fgD">
+                                            <rect key="frame" x="95" y="9" width="299" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="Oit-DL-ZVY"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5U6-8A-5OK">
+                                            <rect key="frame" x="95" y="35" width="315" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="18" id="8zt-3t-pIQ"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQ4-n6-F36">
+                                            <rect key="frame" x="95" y="54" width="299" height="21.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="jtS-wF-7UJ"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="5U6-8A-5OK" firstAttribute="leading" secondItem="PRO-LZ-pcg" secondAttribute="trailing" constant="15" id="1LQ-tu-xZy"/>
+                                        <constraint firstAttribute="trailing" secondItem="zQ4-n6-F36" secondAttribute="trailing" constant="20" symbolic="YES" id="4L7-IN-u3I"/>
+                                        <constraint firstItem="b8s-r7-fgD" firstAttribute="leading" secondItem="PRO-LZ-pcg" secondAttribute="trailing" constant="15" id="8jM-yt-F5y"/>
+                                        <constraint firstItem="5U6-8A-5OK" firstAttribute="top" secondItem="b8s-r7-fgD" secondAttribute="bottom" constant="5" id="Aui-5R-i16"/>
+                                        <constraint firstItem="5U6-8A-5OK" firstAttribute="trailing" secondItem="OST-2g-SzC" secondAttribute="trailingMargin" constant="16" id="FZS-Xx-Ggd"/>
+                                        <constraint firstItem="b8s-r7-fgD" firstAttribute="top" secondItem="OST-2g-SzC" secondAttribute="top" constant="9" id="Hme-Hg-T2X"/>
+                                        <constraint firstItem="zQ4-n6-F36" firstAttribute="top" secondItem="5U6-8A-5OK" secondAttribute="bottom" constant="1" id="KSG-Jc-ra5"/>
+                                        <constraint firstAttribute="bottom" secondItem="zQ4-n6-F36" secondAttribute="bottom" constant="9.5" id="Twa-UR-aaR"/>
+                                        <constraint firstItem="zQ4-n6-F36" firstAttribute="leading" secondItem="PRO-LZ-pcg" secondAttribute="trailing" constant="15" id="nCb-db-wGf"/>
+                                        <constraint firstItem="PRO-LZ-pcg" firstAttribute="leading" secondItem="OST-2g-SzC" secondAttribute="leading" constant="15" id="wdu-er-HW6"/>
+                                        <constraint firstItem="PRO-LZ-pcg" firstAttribute="centerY" secondItem="OST-2g-SzC" secondAttribute="centerY" id="yfU-ed-DnZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="b8s-r7-fgD" secondAttribute="trailing" constant="20" symbolic="YES" id="z8D-np-jj0"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imageOfPlace" destination="PRO-LZ-pcg" id="wGW-3E-4mm"/>
+                                    <outlet property="locationLabel" destination="5U6-8A-5OK" id="gOy-ne-voT"/>
+                                    <outlet property="nameLabel" destination="b8s-r7-fgD" id="h6M-yu-o1M"/>
+                                    <outlet property="typeLabel" destination="zQ4-n6-F36" id="X8d-jk-Un9"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
