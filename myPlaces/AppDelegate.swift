@@ -4,7 +4,7 @@
 //
 //  Created by Миша Вашкевич on 04.10.2021.
 //
-
+import RealmSwift
 import UIKit
 
 @main
@@ -13,7 +13,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let schemaVersion: UInt64 = 2
+        
+        let config = Realm.Configuration(
+            schemaVersion: schemaVersion, // Set the new schema version.
+            
+            migrationBlock: { migration, oldSchemaVersion in
+                if oldSchemaVersion < schemaVersion {
+                    // The enumerateObjects(ofType:_:) method iterates over
+                    // every Person object stored in the Realm file to apply the migration
+                   
+                    }
+            
+            }) 
+        
+        // Tell Realm to use this new configuration object for the default Realm
+        Realm.Configuration.defaultConfiguration = config
+                 
         return true
     }
 
